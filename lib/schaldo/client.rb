@@ -16,8 +16,17 @@ class Schaldo::Client
     @guid = guid
   end
 
+  def balance
+    response = RestClient.get (Schaldo.config_server + Schaldo::BALANCE_CLIENT_INDEX_EP), {
+      access_token: Schaldo.token,
+      client_guid: @guid
+    }
+    response = JSON.parse(response)
+    response["balance"]
+  end
+
   def explain_balance
-    response = RestClient.get (Schaldo.config.server + Schaldo::BALANCE_EXPLAIN_EP), {
+    response = RestClient.get (Schaldo.config.server + Schaldo::BALANCE_CLIENT_EXPLAIN_EP), {
       params: {
         access_token: Schaldo.token,
         client_guid: @guid
@@ -30,7 +39,7 @@ class Schaldo::Client
     raise "amount must be in number (eg. 1000, 100.85)" if (amount =~ /^[0-9\.]+$/).nil?
     amount = amount.to_f if amount.is_a?(String)
 
-    response = RestClient.post (Schaldo.config.server + Schaldo::BALANCE_TOPUP_EP), {
+    response = RestClient.post (Schaldo.config.server + Schaldo::BALANCE_CLIENT_TOPUP_EP), {
       access_token: Schaldo.token,
       client_guid: @guid,
       amount: amount,

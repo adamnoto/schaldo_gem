@@ -6,8 +6,9 @@ module Schaldo
 
   TOKEN_RENEWAL_EP = "/oauth/token"
   COMPANY_CLIENT_REGISTER_NEW = "/api/v1/company/client/register_new"
-  BALANCE_EXPLAIN_EP = "/api/v1/balance/client/explain"
-  BALANCE_TOPUP_EP = "/api/v1/balance/client/topup"
+  BALANCE_CLIENT_INDEX_EP = "/api/v1/balance/client"
+  BALANCE_CLIENT_EXPLAIN_EP = "/api/v1/balance/client/explain"
+  BALANCE_CLIENT_TOPUP_EP = "/api/v1/balance/client/topup"
 
   module_function
   def token
