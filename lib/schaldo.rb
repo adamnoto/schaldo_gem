@@ -4,13 +4,13 @@ require "active_support/configurable"
 module Schaldo
   include ActiveSupport::Configurable
 
-  TOKEN_RENEWAL_EP = Schaldo.config.schaldo_endpoint + "/oauth/token"
-  EXPLAIN_BALANCE_EP = Schaldo.config.schaldo_endpoint + "/api/v1/balance/client/explain"
+  TOKEN_RENEWAL_EP = "/oauth/token"
+  EXPLAIN_BALANCE_EP = "/api/v1/balance/client/explain"
 
   module_function
   def token
     if @token == nil || (Time.now.to_i + 100) > @token_expired_time
-      response = RestClient.post "#{Schaldo.config.schaldo_endpoint}", {
+      response = RestClient.post "#{Schaldo.config.server}", {
           grant_type: "client_credentials",
           client_id: Schaldo.config.app_id,
           client_secret: Schaldo.config.secret_id
@@ -27,7 +27,7 @@ module Schaldo
     def setup
       config.app_id = ""
       config.secret_id = ""
-      config.schaldo_endpoint ||= "http://localhost:4002"
+      config.server ||= "http://localhost:4002"
       yield config
     end
   end

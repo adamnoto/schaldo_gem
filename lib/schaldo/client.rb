@@ -6,7 +6,7 @@ class Schaldo::Client
   end
 
   def check_balance
-    response = RestClient.post Schaldo::EXPLAIN_BALANCE_EP, {
+    response = RestClient.post (Schaldo.config.host + Schaldo::EXPLAIN_BALANCE_EP), {
       access_token: Schaldo.token,
       client_guid: @guid
     }
