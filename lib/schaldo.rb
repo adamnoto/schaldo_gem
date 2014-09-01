@@ -10,7 +10,7 @@ module Schaldo
   module_function
   def token
     if @token == nil || (Time.now.to_i + 100) > @token_expired_time
-      response = RestClient.post "#{Schaldo.config.server}", {
+      response = RestClient.post (Schaldo.config.server + Schaldo::TOKEN_RENEWAL_EP), {
           grant_type: "client_credentials",
           client_id: Schaldo.config.app_id,
           client_secret: Schaldo.config.secret_id
