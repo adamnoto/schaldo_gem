@@ -32,3 +32,5 @@ module Schaldo
     end
   end
 end
+
+require "schaldo/client"
