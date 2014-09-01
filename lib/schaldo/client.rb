@@ -53,7 +53,7 @@ class Schaldo::Client
   end
 
   def topup_detail(guid)
-    response = RestClient.get (Schaldo.config.server + SchaldO::BALANCE_CLIENT_TOPUP_DETAIL_EP), {
+    response = RestClient.get (Schaldo.config.server + Schaldo::BALANCE_CLIENT_TOPUP_DETAIL_EP), {
       params: {
         access_token: Schaldo.token,
         client_guid: @guid,
