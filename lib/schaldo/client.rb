@@ -1,6 +1,17 @@
 require "json"
 
 class Schaldo::Client
+  class << self
+    def register_new(name)
+      response = RestClient.post (Schaldo.config.server + Schaldo::COMPANY_CLIENT_REGISTER_NEW), {
+        access_token: Schaldo.token,
+        name: name.to_s
+      }
+      response = JSON.parse(response)
+      response["client_guid"]
+    end
+  end
+
   def initialize(guid)
     @guid = guid
   end
@@ -15,7 +26,7 @@ class Schaldo::Client
     JSON.parse response
   end
 
-  def topup(amount, author, note)
+  def topup_balance(amount, author, note)
     raise "amount must be in number (eg. 1000, 100.85)" if (amount =~ /^[0-9\.]+$/).nil?
     amount = amount.to_f if amount.is_a?(String)
 
