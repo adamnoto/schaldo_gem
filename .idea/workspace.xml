@@ -26,8 +26,8 @@
       <file leaf-file-name="schaldo.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/schaldo.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6" max-vertical-offset="615">
-              <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="6" max-vertical-offset="630">
+              <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -36,8 +36,8 @@
       <file leaf-file-name="client.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/schaldo/client.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49079755" vertical-offset="0" max-vertical-offset="489">
-              <caret line="16" column="26" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.9202454" vertical-offset="0" max-vertical-offset="555">
+              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -63,8 +63,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="718" />
-    <option name="y" value="233" />
+    <option name="x" value="673" />
+    <option name="y" value="192" />
     <option name="width" value="1073" />
     <option name="height" value="762" />
   </component>
@@ -251,7 +251,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="718" y="233" width="1073" height="762" extended-state="0" />
+    <frame x="673" y="192" width="1073" height="762" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -368,16 +368,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/schaldo.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6" max-vertical-offset="615">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="6" max-vertical-offset="630">
+          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/schaldo/client.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49079755" vertical-offset="0" max-vertical-offset="489">
-          <caret line="16" column="26" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.9202454" vertical-offset="0" max-vertical-offset="555">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding />
         </state>
       </provider>

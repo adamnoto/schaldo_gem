@@ -5,7 +5,8 @@ module Schaldo
   include ActiveSupport::Configurable
 
   TOKEN_RENEWAL_EP = "/oauth/token"
-  EXPLAIN_BALANCE_EP = "/api/v1/balance/client/explain"
+  BALANCE_EXPLAIN_EP = "/api/v1/balance/client/explain"
+  BALANCE_TOPUP_EP = "/api/v1/balance/client/topup"
 
   module_function
   def token
