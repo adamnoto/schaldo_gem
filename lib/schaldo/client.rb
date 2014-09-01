@@ -17,7 +17,7 @@ class Schaldo::Client
   end
 
   def balance
-    response = RestClient.get (Schaldo.config_server + Schaldo::BALANCE_CLIENT_INDEX_EP), {
+    response = RestClient.get (Schaldo.config.server + Schaldo::BALANCE_CLIENT_INDEX_EP), {
       access_token: Schaldo.token,
       client_guid: @guid
     }
