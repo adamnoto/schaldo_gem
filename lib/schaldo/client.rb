@@ -12,8 +12,10 @@ class Schaldo::Client
     })
 
     response = RestClient.get (Schaldo.config.server + Schaldo::EXPLAIN_BALANCE_EP), {
-      access_token: Schaldo.token,
-      client_guid: @guid
+      params: {
+        access_token: Schaldo.token,
+        client_guid: @guid
+      }
     }
     JSON.parse response
   end
