@@ -54,10 +54,12 @@ class Schaldo::Client
 
   def balance_waiting_verification
     response = RestClient.get (Schaldo.config.server + Schaldo::BALANCE_CLIENT_WAITING_EP), {
-      access_token: Schaldo.token,
-      # actually doesn't really matter since guid of the client is not basically needed
-      # but since the API requires client_guid for the whole namespace, we need to attach it.
-      client_guid: @guid
+      params: {
+        access_token: Schaldo.token,
+        # actually doesn't really matter since guid of the client is not basically needed
+        # but since the API requires client_guid for the whole namespace, we need to attach it.
+        client_guid: @guid
+      }
     }
 
     JSON.parse response
