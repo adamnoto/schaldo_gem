@@ -52,6 +52,18 @@ class Schaldo::Client
     JSON.parse response
   end
 
+  def topup_detail(guid)
+    response = RestClient.get (Schaldo.config.server + SchaldO::BALANCE_CLIENT_TOPUP_DETAIL_EP), {
+      params: {
+        access_token: Schaldo.token,
+        client_guid: @guid,
+        topup_guid: guid
+      }
+    }
+
+    JSON.parse response
+  end
+
   def balance_waiting_verification
     response = RestClient.get (Schaldo.config.server + Schaldo::BALANCE_CLIENT_WAITING_EP), {
       params: {

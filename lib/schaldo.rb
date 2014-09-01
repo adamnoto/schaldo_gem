@@ -9,7 +9,8 @@ module Schaldo
   BALANCE_CLIENT_INDEX_EP = "/api/v1/balance/client"
   BALANCE_CLIENT_EXPLAIN_EP = "/api/v1/balance/client/explain"
   BALANCE_CLIENT_TOPUP_EP = "/api/v1/balance/client/topup"
-  BALANCE_CLIENT_WAITING_EP = "/api/v1/balance/client/waiting_verification"
+  BALANCE_CLIENT_WAITING_EP = "/api/v1/balance/client/topup/waiting_verification"
+  BALANCE_CLIENT_TOPUP_DETAIL_EP = "/api/v1/balance/client/topup/detail"
 
   module_function
   def token

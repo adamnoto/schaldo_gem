@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Schaldo::VERSION
   spec.authors       = ["Adam Pahlevi"]
   spec.email         = ["adam.pahlevi@gmail.com"]
-  spec.summary       = %q{Gem for Schaldo, balance management system as a service}
-  spec.description   = %q{Gem for Schaldo, balance management system as a service}
+  spec.summary       = %q{Gem for Schaldo, balance management system as a service (still under development)}
+  spec.description   = %q{Gem for Schaldo, balance management system as a service (still under development)}
   spec.homepage      = "http://adampahlevi.com"
   spec.license       = "MIT"
 
