@@ -52,13 +52,28 @@ class Schaldo::Client
     JSON.parse response
   end
 
-  def topup_detail(guid)
+  def topup_detail(topup_guid)
     response = RestClient.get (Schaldo.config.server + Schaldo::BALANCE_CLIENT_TOPUP_DETAIL_EP), {
       params: {
         access_token: Schaldo.token,
         client_guid: @guid,
-        topup_guid: guid
+        topup_guid: topup_guid
       }
+    }
+
+    JSON.parse response
+  end
+
+  def change_topup_status(topup_guid, status, verifier)
+    statsym = status.downcase.to_sym
+    raise "status must either be verify/cancel" if [:verify, :cancel].include?(statsym)
+
+    response = RestClient.post (Schaldo.config.server + Schaldo::BALANCE_CLIENT_TOPUP_CHANGE_STATUS_EP), {
+      access_token: Schaldo.token,
+      client_guid: @guid,
+      topup_guid: topup_guid,
+      verifier: verifier,
+      status: status
     }
 
     JSON.parse response
