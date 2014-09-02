@@ -66,7 +66,7 @@ class Schaldo::Client
 
   def change_topup_status(topup_guid, status, verifier)
     statsym = status.downcase.to_sym
-    raise "status must either be verified/canceled" if [:verify, :cancel].include?(statsym)
+    raise "status must either be verified/canceled" if [:verified, :canceled].include?(statsym)
     raise "verifier cannot be nil, you can assign name or your user id" if verifier.blank?
 
     response = RestClient.post (Schaldo.config.server + Schaldo::BALANCE_CLIENT_TOPUP_CHANGE_STATUS_EP), {
