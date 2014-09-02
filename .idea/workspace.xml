@@ -36,8 +36,8 @@
       <file leaf-file-name="client.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/schaldo/client.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.93670887" vertical-offset="726" max-vertical-offset="1485">
-              <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.65189874" vertical-offset="726" max-vertical-offset="1500">
+              <caret line="69" column="90" selection-start-line="69" selection-start-column="90" selection-end-line="69" selection-end-column="90" />
               <folding />
             </state>
           </provider>
@@ -397,8 +397,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/schaldo/client.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.93670887" vertical-offset="726" max-vertical-offset="1485">
-          <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.65189874" vertical-offset="726" max-vertical-offset="1500">
+          <caret line="69" column="90" selection-start-line="69" selection-start-column="90" selection-end-line="69" selection-end-column="90" />
           <folding />
         </state>
       </provider>
