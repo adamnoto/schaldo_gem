@@ -2,7 +2,7 @@ require "rails/generators"
 
 module Schaldo
   module Generators
-    class SchaldoGenerator < Rails::Generator::Base
+    class SchaldoGenerator < Rails::Generators::Base
       source_root File.expand_path("../templates", __FILE__)
 
       namespace "schaldo"
