@@ -18,8 +18,8 @@ module Schaldo
   module_function
   class << self
     def setup
-      config.app_id = ""
-      config.secret_id = ""
+      config.app_key = nil
+      config.secret_key = nil
       config.server ||= "http://localhost:4002"
       yield config
     end
@@ -28,8 +28,8 @@ module Schaldo
     if @token == nil || (Time.now.to_i + 100) > @token_expired_time
       response = RestClient.post (Schaldo.config.server + Schaldo::TOKEN_RENEWAL_EP), {
           grant_type: "client_credentials",
-          client_id: Schaldo.config.app_id,
-          client_secret: Schaldo.config.secret_id
+          client_id: Schaldo.config.app_key,
+          client_secret: Schaldo.config.secret_key
       }
       response = JSON.parse(response)
 
