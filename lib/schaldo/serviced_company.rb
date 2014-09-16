@@ -6,6 +6,8 @@ require "json"
 # and on which ServicedCompany administer those top ups.
 
 module Schaldo::ServicedCompany
+  module_function
+
   def change_topup_status(topup_guid, status, verifier)
     statsym = status.downcase.to_sym
     raise "status must either be verified/canceled, yours: #{statsym}" unless [:verified, :canceled].include?(statsym)
