@@ -1,6 +1,11 @@
 require "json"
 
-module Schaldo::System
+# Schaldo::ServicedCompany deal with the company that uses the API.
+# ServicedCompany is the user that register their app, and use the service of Schaldo.
+# ServicedCompany usually have more than one clients, on which the client perform top up balance,
+# and on which ServicedCompany administer those top ups.
+
+module Schaldo::ServicedCompany
   def change_topup_status(topup_guid, status, verifier)
     statsym = status.downcase.to_sym
     raise "status must either be verified/canceled, yours: #{statsym}" unless [:verified, :canceled].include?(statsym)
@@ -17,7 +22,7 @@ module Schaldo::System
     JSON.parse response
   end
 
-  def balance_waiting_verification
+  def topup_waiting_verification
     response = RestClient.get (Schaldo.config.server + Schaldo::BALANCE_CLIENT_WAITING_EP), {
       params: {
         access_token: Schaldo.token,

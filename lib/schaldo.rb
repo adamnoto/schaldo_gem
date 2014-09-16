@@ -42,5 +42,5 @@ module Schaldo
 end
 
 require "schaldo/client"
-require "schaldo/system"
+require "schaldo/serviced_company"
 require "schaldo/topup"

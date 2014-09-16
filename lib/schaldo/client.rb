@@ -15,4 +15,11 @@ class Schaldo::Client
   def initialize(guid)
     @guid = guid
   end
+
+  def topup
+    if @topup.nil?
+      @topup = Schaldo::Topup.new(self)
+    end
+    @topup
+  end
 end
