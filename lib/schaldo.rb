@@ -1,5 +1,7 @@
 require "schaldo/version"
 require "active_support/configurable"
+require "rest_client"
+require "json"
 
 module Schaldo
   include ActiveSupport::Configurable
@@ -14,6 +16,14 @@ module Schaldo
   BALANCE_CLIENT_TOPUP_CHANGE_STATUS_EP = "/api/v1/balance/client/topup/change_status"
 
   module_function
+  class << self
+    def setup
+      config.app_id = ""
+      config.secret_id = ""
+      config.server ||= "http://localhost:4002"
+      yield config
+    end
+  end
   def token
     if @token == nil || (Time.now.to_i + 100) > @token_expired_time
       response = RestClient.post (Schaldo.config.server + Schaldo::TOKEN_RENEWAL_EP), {
@@ -29,14 +39,8 @@ module Schaldo
     @token
   end
 
-  class << self
-    def setup
-      config.app_id = ""
-      config.secret_id = ""
-      config.server ||= "http://localhost:4002"
-      yield config
-    end
-  end
 end
 
 require "schaldo/client"
+require "schaldo/system"
+require "schaldo/topup"
