@@ -14,6 +14,7 @@ module Schaldo
   BALANCE_CLIENT_WAITING_EP = "/api/v1/balance/client/topup/waiting_verification"
   BALANCE_CLIENT_TOPUP_DETAIL_EP = "/api/v1/balance/client/topup/detail"
   BALANCE_CLIENT_TOPUP_CHANGE_STATUS_EP = "/api/v1/balance/client/topup/change_status"
+  BALANCE_CLIENT_TOPUP_LIST_BY_DMY = "/api/v1/balance/client/topup"
 
   module_function
   class << self

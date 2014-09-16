@@ -6,6 +6,17 @@ class Schaldo::Topup
     raise "client must be an instance of Schaldo::Client" unless client.is_a?(Schaldo::Client)
   end
 
+  def list_topups_at(d, m, y)
+    response = RestClient.get (Schaldo.config.server + Schaldo::BALANCE_CLIENT_TOPUP_LIST_BY_DMY), {
+      params: {
+        access_token: Schaldo.token,
+        client_guid: @client.guid
+      }
+    }
+    response = JSON.parse(response)
+    response
+  end
+
   # get the balance detail of the client identified by the guid
   def balance
     response = RestClient.get (Schaldo.config.server + Schaldo::BALANCE_CLIENT_INDEX_EP), {
